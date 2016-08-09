@@ -84,10 +84,10 @@ def teamList(team):
 
 # Main Function
 if __name__ == "__main__":
-    #browser = robobrowser.RoboBrowser(history=True, parser="html.parser")
-    #browser.open(NRL)
-    #browser.open(NRL + browser.find("a", href=True, text=re.compile("Team Lists"))["href"])
-    browser = BeautifulSoup(open("backup.html").read())
+    browser = robobrowser.RoboBrowser(history=True, parser="html.parser")
+    browser.open(NRL)
+    browser.open(NRL + browser.find("a", href=True, text=re.compile("Team Lists"))["href"])
+    #browser = BeautifulSoup(open("backup.html").read())
 
     for status in GAME_CLASSES:
         for game_html in browser.find_all("div", class_=status):
